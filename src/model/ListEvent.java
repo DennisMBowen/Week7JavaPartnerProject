@@ -7,12 +7,26 @@ package model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="events")
 public class ListEvent {
+	@Id
+	@GeneratedValue
+	@Column
 	private int id;
+	@Column
 	private String artist;
+	@Column
 	private LocalDate concertDate;
+	@Column
 	private LocalDate concertTime;
-	//private Ticket ticket;
+	@Column
+	private ListTicket ticket;
 	
 	//Getters and Setters
 	public int getId() {
