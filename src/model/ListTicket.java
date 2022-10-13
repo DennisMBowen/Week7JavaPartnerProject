@@ -5,9 +5,18 @@
  */
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ticket")
 public class ListTicket {
+	@Column
 	private Double price;
+	@Column
 	private int ticketsRemaining;
+	@Column
 	private final int maxTickets = 50; //constant value?
 	
 	//Getters and Setters

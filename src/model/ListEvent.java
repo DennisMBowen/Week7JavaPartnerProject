@@ -6,7 +6,9 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -24,7 +26,7 @@ public class ListEvent {
 	@Column
 	private LocalDate concertDate;
 	@Column
-	private LocalDate concertTime;
+	private LocalTime concertTime;
 	@Column
 	private ListTicket ticket;
 	
@@ -53,12 +55,20 @@ public class ListEvent {
 		this.concertDate = concertDate;
 	}
 	
-	public LocalDate getConcertTime() {
+	public LocalTime getConcertTime() {
 		return concertTime;
 	}
 	
-	public void setConcertTime(LocalDate concertTime) {
+	public void setConcertTime(LocalTime concertTime) {
 		this.concertTime = concertTime;
+	}
+	
+	public ListTicket getTicket() {
+		return ticket;
+	}
+	
+	public void setTicket(ListTicket ticket) {
+		this.ticket = ticket;
 	}
 	
 	//Constructors
@@ -66,7 +76,7 @@ public class ListEvent {
 		super();
 	}
 	
-	public ListEvent(String artist, LocalDate concertDate, LocalDate concertTime) {
+	public ListEvent(String artist, LocalDate concertDate, LocalTime concertTime) {
 		super();
 		this.artist = artist;
 		this.concertDate = concertDate;
@@ -79,6 +89,8 @@ public class ListEvent {
 		return "ListEvent [id=" + id + ", artist=" + artist + ", concertDate=" + concertDate + ", concertTime="
 				+ concertTime + "]";
 	}
+	
+	
 	
 	
 	
